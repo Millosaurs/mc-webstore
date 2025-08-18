@@ -23,6 +23,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
+import org.bstats.bukkit.Metrics;
 
 public class WebstoreIntegrationPlugin extends JavaPlugin implements Listener {
     private HttpServer httpServer;
@@ -34,6 +35,11 @@ public class WebstoreIntegrationPlugin extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        //premium features check
+        //Bstats stuff
+        int pluginId = 26958; // bstats page https://bstats.org/plugin/bukkit/McWebStore/26958
+        Metrics metrics = new Metrics(this, pluginId);
+
         // Display ASCII art banner
         displayBanner();
 
