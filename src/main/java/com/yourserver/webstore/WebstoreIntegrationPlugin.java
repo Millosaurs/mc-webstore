@@ -24,6 +24,7 @@ public class WebstoreIntegrationPlugin extends JavaPlugin {
     private List<String> allowedCommands;
     private Gson gson = new Gson();
 
+
     @Override
     public void onEnable() {
         // Save default config if it doesn't exist
@@ -35,32 +36,35 @@ public class WebstoreIntegrationPlugin extends JavaPlugin {
         // Start HTTP server
         startHttpServer();
 
-        // Log success message
-        getLogger().info("✅ Webstore Integration Plugin enabled successfully!");
-        getLogger().info("🌐 HTTP server listening on port " + getConfig().getInt("port", 8123));
-        getLogger().info("🔒 Secret key configured: " + (secret.equals("changeme-super-secret-key") ? "❌ DEFAULT (CHANGE IT!)" : "✅ Custom"));
+        int port = getConfig().getInt("port", 8123);
+        boolean usingDefaultSecret = "change-me-super-secret-key".equals(secret);
+
+        // Startup summary logs
+        getLogger().info("Webstore Integration Plugin enabled successfully.");
+        getLogger().info("HTTP server listening on port " + port);
+        getLogger().info("Secret key status: " + (usingDefaultSecret ? "DEFAULT (CHANGE IT!)" : "Custom"));
+
+        if (usingDefaultSecret) {
+            getLogger().warning("WARNING: Using default secret key! Change it in config.yml for security.");
+        }
     }
 
     @Override
     public void onDisable() {
         if (httpServer != null) {
             httpServer.stop(0);
-            getLogger().info("🛑 HTTP server stopped");
+            getLogger().info("HTTP server stopped");
         }
-        getLogger().info("❌ Webstore Integration Plugin disabled");
+        getLogger().info("Webstore Integration Plugin disabled");
     }
 
     private void loadConfiguration() {
         FileConfiguration config = getConfig();
 
-        this.secret = config.getString("secret", "changeme-super-secret-key");
+        this.secret = config.getString("secret", "change-me-super-secret-key");
         this.allowedCommands = config.getStringList("allowedCommands");
 
-        if ("changeme-super-secret-key".equals(this.secret)) {
-            getLogger().warning("⚠️ WARNING: Using default secret key! Change it in config.yml for security!");
-        }
-
-        getLogger().info("📝 Loaded " + allowedCommands.size() + " allowed command prefixes");
+        getLogger().info("Loaded " + allowedCommands.size() + " allowed command prefixes");
     }
 
     private void startHttpServer() {
@@ -76,10 +80,9 @@ public class WebstoreIntegrationPlugin extends JavaPlugin {
             httpServer.setExecutor(null);
             httpServer.start();
 
-            getLogger().info("🌐 HTTP server started successfully on port " + port);
-
+            getLogger().info("HTTP server started successfully on port " + port);
         } catch (IOException e) {
-            getLogger().log(Level.SEVERE, "❌ Failed to start HTTP server! Check if port is available.", e);
+            getLogger().log(Level.SEVERE, "Failed to start HTTP server. Check if the port is available.", e);
         }
     }
 

@@ -1,0 +1,38 @@
+# ================================
+# Webstore Integration Plugin Config
+# ================================
+
+# HTTP Server Configuration
+port: 8123
+
+# Security Configuration
+# IMPORTANT: Change this secret key before using in production!
+secret: "changeme-super-secret-key"
+
+# Command Whitelist
+# If this list is empty, ALL commands are allowed (not recommended for production)
+# Add command prefixes that you want to allow
+allowedCommands:
+  - "lp user"          # LuckPerms user commands
+  - "lp group"         # LuckPerms group commands
+  - "give"             # Give items to players
+  - "gamemode"         # Change player gamemode
+  - "say"              # Server announcements
+  - "tellraw"          # Send JSON messages
+  - "title"            # Send titles to players
+  - "playsound"        # Play sounds
+  - "effect"           # Give effects to players
+  - "tp"               # Teleport players
+  - "spawn"            # Teleport to spawn
+
+# Logging Configuration
+logging:
+  logCommands: true      # Log all executed commands
+  logFailures: true      # Log failed command executions
+  logRequests: true      # Log incoming HTTP requests
+
+# Advanced Configuration
+advanced:
+  maxCommandsPerRequest: 50    # Maximum commands per delivery request
+  requestTimeout: 30           # HTTP request timeout in seconds
+  enableCors: true            # Enable CORS headers for web requests

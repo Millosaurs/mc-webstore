@@ -1,0 +1,25 @@
+name: WebstoreIntegration
+version: 1.0.0
+main: com.yourserver.webstore.WebstoreIntegrationPlugin
+api-version: 1.20
+author: YourName
+description: Webstore integration plugin for Minecraft server
+website: https://your-website.com
+
+# Plugin will work better with these plugins installed
+softdepend:
+  - LuckPerms
+  - Vault
+
+# Commands (optional - for future use)
+commands:
+  webstore:
+    description: Webstore integration commands
+    usage: /webstore <reload|status>
+    permission: webstore.admin
+
+# Permissions (optional - for future use)
+permissions:
+  webstore.admin:
+    description: Access to webstore admin commands
+    default: op
