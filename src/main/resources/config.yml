@@ -35,4 +35,5 @@ logging:
 advanced:
   maxCommandsPerRequest: 50    # Maximum commands per delivery request
   requestTimeout: 30           # HTTP request timeout in seconds
-  enableCors: true            # Enable CORS headers for web requests
+  enableCors: true             # Enable CORS headers for web requests
+  queueOfflineItems: true      # Queues items till player joins

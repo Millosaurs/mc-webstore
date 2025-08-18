@@ -1,4 +1,4 @@
-package com.yourserver.webstore;
+package me.millosaurs.webstoreApi;
 
 import org.bukkit.Material;
 

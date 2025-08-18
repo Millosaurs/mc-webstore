@@ -1,10 +1,10 @@
 name: WebstoreIntegration
-version: 1.0.0
-main: com.yourserver.webstore.WebstoreIntegrationPlugin
+version: 1.1.0
+main: me.millosaurs.webstoreApi.WebstoreIntegrationPlugin
 api-version: 1.20
-author: YourName
-description: Webstore integration plugin for Minecraft server
-website: https://your-website.com
+author: Millosaurs
+description: Enhanced Minecraft webstore integration plugin with offline delivery
+website: https://github.com/Millosaurs/Mc-webstore
 
 # Plugin will work better with these plugins installed
 softdepend:

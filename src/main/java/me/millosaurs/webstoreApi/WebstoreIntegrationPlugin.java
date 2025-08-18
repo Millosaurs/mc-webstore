@@ -1,4 +1,4 @@
-package com.yourserver.webstore;
+package me.millosaurs.webstoreApi;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -72,12 +72,13 @@ public class WebstoreIntegrationPlugin extends JavaPlugin implements Listener {
     private void displayBanner() {
         String version = getDescription().getVersion();
         getLogger().info("");
-        getLogger().info("███╗   ███╗ ██████╗      ██╗    ██╗███████╗██████╗ ███████╗████████╗ ██████╗ ██████╗ ███████╗");
-        getLogger().info("████╗ ████║██╔════╝      ██║    ██║██╔════╝██╔══██╗██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗██╔════╝");
-        getLogger().info("██╔████╔██║██║   ███████╗██║ █╗ ██║█████╗  ██████╔╝███████╗   ██║   ██║   ██║██████╔╝█████╗");
-        getLogger().info("██║╚██╔╝██║██║   ╚══════╝██║███╗██║██╔══╝  ██╔══██╗╚════██║   ██║   ██║   ██║██╔══██╗██╔══╝");
-        getLogger().info("██║ ╚═╝ ██║╚██████╗      ╚███╔███╔╝███████╗██████╔╝███████║   ██║   ╚██████╔╝██║  ██║███████╗");
-        getLogger().info("╚═╝     ╚═╝ ╚═════╝       ╚══╝╚══╝ ╚══════╝╚═════╝ ╚══════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝");
+        getLogger().info("##     ## ######      ##      ## ######## ########   ######  ########  #######  ########  ######## ");
+        getLogger().info("###   ### ##    ##    ##  ##  ## ##       ##     ## ##    ##    ##    ##     ## ##     ## ##       ");
+        getLogger().info("#### #### ##          ##  ##  ## ##       ##     ## ##          ##    ##     ## ##     ## ##       ");
+        getLogger().info("## ### ## ##          ##  ##  ## ######   ########   ######     ##    ##     ## ########  ######   ");
+        getLogger().info("##     ## ##          ##  ##  ## ##       ##     ##       ##    ##    ##     ## ##   ##   ##       ");
+        getLogger().info("##     ## ##    ##    ##  ##  ## ##       ##     ## ##    ##    ##    ##     ## ##    ##  ##       ");
+        getLogger().info("##     ##  ######      ###  ###  ######## ########   ######     ##     #######  ##     ## ######## ");
         getLogger().info("");
         getLogger().info("                                Author: Millosaurs");
         getLogger().info("                                Version: " + version);
