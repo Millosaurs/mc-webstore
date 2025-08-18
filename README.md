@@ -1,6 +1,6 @@
 # Webstore Integration Plugin
 
-A secure, lightweight **Spigot/Bukkit plugin** that lets your webstore (e.g., Tebex, CraftingStore, custom checkout) deliver commands to your Minecraft server in real-time via a simple REST API.
+A secure, lightweight **Paper plugin** that lets your webstore (e.g., Tebex, CraftingStore, custom checkout) deliver commands to your Minecraft server in real-time via a simple REST API.
 
 ---
 
